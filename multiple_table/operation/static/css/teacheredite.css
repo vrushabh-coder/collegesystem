@@ -1,0 +1,11 @@
+form{
+
+ border: 2px solid black;
+ border-radius: 5px;
+}
+label{
+ color: red;
+}
+h2{
+color: blue;
+}

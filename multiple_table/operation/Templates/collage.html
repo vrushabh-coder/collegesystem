@@ -1,0 +1,38 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>collage detail</title>
+
+    <link rel="stylesheet"  type="text/css" href="{%static 'css/edite.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+      </script>
+</head>
+<body>
+<center><form method="POST" class="post-form" action="/collage/"  >
+{% block content %}
+    {% csrf_token %}
+{% endblock %}
+
+    <h4> Enter CollageName</h4>
+
+
+    <label>College Name:</label>
+    <input type="text" name="collagename" maxlength="20" required id="collagename" placeholder="collegename">
+
+    <br><br>
+            <center><button type="submit" class="btn btn-primary">submit</button></center>
+
+
+<br>
+<br>
+</form>
+</center>
+<!--<center><a href="{% url 'show' %}" class="btn btn-primary">list Of College</a></center>-->
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+      </script>
+</head>
+<body>
+<center><h2>Admin Registration</h2></center>
+{% block body %}
+<center><form method="POST">
+    {% csrf_token %}
+    <div class="col-md-2">
+
+    </div>
+
+    <br>
+            <input type="text" name="username" placeholder="username" class="form-control" required="required"><br>
+    <br>
+            <input type="password" name="password" placeholder="password" class="form-control" required="required"/><br>
+    <br>
+            <input type="text" name="firsthand" placeholder="name" class="form-control" required="required"/><br>
+    <br>
+            <input type="text" name="laminae" class="form-control" placeholder="surname" required="required"/><br>
+    <br>
+            <button type="submit" class="btn btn-primary form-control"><span class="glyphicon glyphicon-save"></span> Submit</button>
+ <br>
+    <br>
+    <a href="/login">Login</a>
+    <br>
+    <br>
+</form>
+</center>
+{% endblock %}
+
+</body>
+</html>

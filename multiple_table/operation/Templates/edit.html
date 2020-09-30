@@ -1,0 +1,37 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+<link rel="stylesheet"  type="text/css" href="{%static 'css/teacheredite.css' %}">
+    <link rel="stylesheet"  type="text/css" href="{%static 'css/edite.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+      </script>
+</head>
+<body>
+<center><form method="post" class="post-form" action = "{% url 'update' id=collage_edite.id %}" >
+{% block content %}
+    {% csrf_token %}
+{% endblock %}
+<h2>CollageName Update</h2>
+        <label class="col-sm-2 col-form-lable">collage Name</label>
+        <input type="text" name="collage" maxlength="20" value="{{collage_edite.collagename}}" required >
+
+    <br>
+    <br>
+
+        <button type="submit" class="btn btn-primary">update</button>
+
+
+<br>
+    <br>
+</form>
+</center>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet"  type="text/css" href="{%static 'css/teacheredite.css' %}">
+    <link rel="stylesheet"  type="text/css" href="{%static 'css/edite.css' %}">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+      </script>
+</head>
+
+
+<div style="background-color:#ff6347;">
+ {% for message in messages %}
+<p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{message}}</p>
+{% endfor %}
+</div>
+
+<center><h2>Update TeacherDetail</h2></center>
+
+<center><form method="post" class="post-form" action = "{% url 'updateteacher' id=teacher_edit.id %}" >
+{% block content %}
+    {% csrf_token %}
+{% endblock %}
+    <br>
+    <br>
+
+    <label class="col-sm-2 col-form-lable">Teache Name</label>
+    <input type="text" name="name" maxlength="20" value="{{teacher_edit.teachername}}" required ><br><br>
+
+    <label class="col-sm-2 col-form-lable">Teache Phone</label>
+    <input type="text" name="phone" maxlength="20" value="{{teacher_edit.teacherphone}}" required ><br><br>
+
+    <label class="col-sm-2 col-form-lable">Teache Email</label>
+    <input type="text" name="email" maxlength="20" value="{{teacher_edit.tearcher_email}}" required ><br><br>
+
+    <input type="hidden" name="collageid" maxlength="20" value="{{teacher_edit.Collageid}}" required >
+    <button type="submit" class="btn btn-primary">update</button>
+    <br>
+    <br>
+
+</form>
+    </center>
+</body>
+</html>
