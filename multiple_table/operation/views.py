@@ -37,7 +37,7 @@ def signup_view(request):
             email = form.changed_data.get('email')
             recipient_list = [email, ]
             username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
+            password = form.cleaned_data.post('password')
             user = authenticate(username=username, password=password)
             send_mail(subject, message, email_form, recipient_list)
             login(request, user)
